@@ -12,7 +12,7 @@ public class VelocityTest {
 	public void testSetDirection() {
 		Velocity out= new Velocity();
 	    out.setDirection(45);
-	    assertEquals("Result", 46, out.getDirection());
+	    assertEquals("Result", 45, out.getDirection());
 	}
 	
 	@Test
