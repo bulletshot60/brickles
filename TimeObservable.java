@@ -1,0 +1,3 @@
+interface TimeObservable {
+    void tick();
+}
