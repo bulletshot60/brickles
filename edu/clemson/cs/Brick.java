@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
  *@author John D. McGregor
  *@version 1.0
  */
-class Brick extends StationaryPiece {
+public class Brick extends StationaryPiece {
     protected boolean _isHit;
 
     /**

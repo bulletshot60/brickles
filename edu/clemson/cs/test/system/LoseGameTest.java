@@ -1,4 +1,4 @@
-package edu.clemson.cs.test;
+package edu.clemson.cs.test.system;
 
 import static org.junit.Assert.*;
 
@@ -8,9 +8,8 @@ import org.assertj.swing.launcher.AppletLauncher;
 import org.junit.Test;
 
 import edu.clemson.cs.BricklesView;
-import javafx.util.Pair;
 
-public class WinGameTest extends AssertJSwingJUnitTestCase {
+public class LoseGameTest extends AssertJSwingJUnitTestCase {
 	AppletViewer viewer;
 	
 	@Override
@@ -21,23 +20,16 @@ public class WinGameTest extends AssertJSwingJUnitTestCase {
 	}
 	
 	@Test 
-	public void shouldWinGameTest() {
+	public void shouldLostGameTest() {
 		BricklesView applet = (BricklesView)viewer.getApplet();
 		while(!applet.getGame().isOver()) {
 			try {
 				Thread.sleep(10);
 			} catch (Exception e) {
-				;
-			}
-			try {
-				Pair<Integer, Integer> puckPosition = applet.getGame().getView().getPuckPosition();
-				Pair<Integer, Integer> paddlePosition = applet.getGame().getView().getPaddlePosition();
-				applet.getGame().getView().setPaddlePosition(new Pair<Integer, Integer>(puckPosition.getKey(), paddlePosition.getValue()));
-			} catch(Exception e) {
-				System.out.println(e.getMessage());;
+				
 			}
 		}
-		assertTrue(applet.getGame().isWon());
+		assertTrue(applet.getGame().isLost());
 	}
 	
 	@Override 

@@ -11,6 +11,10 @@ public abstract class ArcadeGame extends Object {
         return _match;
     }
 
+    public String getName() {
+    	return _name;
+    }
+    
     public abstract PlayingField newPlayingField(ArcadeGameMatch aGame);
 
     public abstract void lost();
